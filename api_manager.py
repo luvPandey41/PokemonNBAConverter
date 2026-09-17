@@ -2,6 +2,7 @@ from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.endpoints import leaguedashptstats
 from nba_api.stats.static import players
 import math
+import json
 import stat_matcher
 import pokebase as pb
 
@@ -48,20 +49,38 @@ def locate_id (name):
 
 #poke api stuff: 
 
-def load_pokedex ():
-    # loads all 151 orginal pokemon. Woudl do 1025 but thats too much
-    for i in range(152):
-        print(create_pokemon(i+1).name, "is loaded")
+def load_kanto_dex_files ():
+    #loading takes multiple minutes, that's why its doesn't make sense to fetch data from api constantly, and file writing is better
+    load_pokedex_files(1, 151)
 
-def create_pokemon (id): 
-    #id is very simple, just equal to the pokedex number
-    temp = pb.pokemon(id)
-    stats = temp.stats
+def load_pokedex_files (num1, num2):
+    # loads pokemon with pokedex numbers from num1 - num2, including both
 
-    return stat_matcher.Pokemon(temp.name, stats[0], stats[1], stats[2], stats[3], stats[4], stats[5])
+    data = {} 
+
+    for i in range(num1, num2 + 1): #has to the number of pokemon in the dex + 1, because last value not included
+        
+        temp = pb.pokemon(i)
+        stats = temp.stats
+        statList = [stats[0].base_stat, stats[1].base_stat, stats[2].base_stat, stats[3].base_stat, stats[4].base_stat, stats[5].base_stat]
+       
+        data [temp.name] = statList
+
+        print(temp.name, "is loaded")
+
+    #pokedex_as_json = json.dumps(data) 
+    #print(poke_as_json)
+    
+    with open("test.json", "w") as f:
+        json.dump(data, f) # add index = 1 or something if wanted to look different, i didn't because I don't wanna run again
 
 
-load_pokedex()
+def turn_file_to_object():
+    pass
+
+#should be ran only once, if you don't already have the files downloaded so they can be created automatically.
+#load_kanto_dex_files() 
+
 #print(create_player("Stephen Curry").find_6_closest())
 
-
+turn_file_to_object()
