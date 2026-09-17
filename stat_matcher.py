@@ -36,17 +36,18 @@ class Player:
         self.defs = None
         self.spcD = None
         self.spd = None
+
+        self.convert_stats()
     
     def convert_stats(self):
 
         self.hp = math.floor(self.gp * self.mpg / 24)
-        self.atk = math.floor(self.ppg * self.fgPct * 8 / 100)
+        self.atk = math.floor(self.ppg * self.fgPct * 8 )
         self.defs = math.floor((self.rpg * 4) + (self.bpg * 12) + (100 - self.rimpct)) #rim percent is the amount a player gets scored on, expressed as a percentage
-        self.spcA = math.floor((self.tpct * self.tpa) / 5 + self.apg * 4)
+        self.spcA = math.floor(((self.tpct * self.tpa) * 100) / 4 + self.apg * 4)
         self.spcD = math.floor(self.spg * 12 + (100 - self.tdef)) # tdef is the amount a player gets scored on outside the arc
         self.spd = math.floor(self.avgSpd * 25)
 
-        pass
 
     def find_6_closest(self):
         results = []
@@ -122,13 +123,13 @@ mewtwo = Pokemon("Mewtwo", 106, 110, 154, 90, 90, 130)
 
 pokemon = [gyarados, bulbasaur, charmander, squirtle, pikachu, raichu, gengar, alakazam, machamp, golem, lapras, dragonite, tyranitar, metagross, mewtwo]
 
-## the line that decides the player right now
-selected_player = findPlayer("Gobert")
+# the line that decides the player right now
+# selected_player = findPlayer("Gobert")
 
-if selected_player is None:
-    print("Player not found")
-else:
-    top6 = selected_player.find_6_closest()
-
-    for pokemon, similarity in top6:
-        print(pokemon, similarity)
+#if selected_player is None:
+#    print("Player not found")
+#else:
+#    top6 = selected_player.find_6_closest()
+#
+#   for pokemon, similarity in top6:
+#       print(pokemon, similarity)
