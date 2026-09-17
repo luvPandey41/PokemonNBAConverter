@@ -3,8 +3,9 @@ from nba_api.stats.endpoints import leaguedashptstats
 from nba_api.stats.static import players
 import math
 import stat_matcher
+import pokebase as pb
 
-
+#nba api stuff:
 def create_player (name):
     
     id = locate_id(name)
@@ -45,4 +46,22 @@ def locate_id (name):
         return None
          
 
-print(create_player("Stephen Curry").find_6_closest())
+#poke api stuff: 
+
+def load_pokedex ():
+    # loads all 151 orginal pokemon. Woudl do 1025 but thats too much
+    for i in range(152):
+        print(create_pokemon(i+1).name, "is loaded")
+
+def create_pokemon (id): 
+    #id is very simple, just equal to the pokedex number
+    temp = pb.pokemon(id)
+    stats = temp.stats
+
+    return stat_matcher.Pokemon(temp.name, stats[0], stats[1], stats[2], stats[3], stats[4], stats[5])
+
+
+load_pokedex()
+#print(create_player("Stephen Curry").find_6_closest())
+
+
