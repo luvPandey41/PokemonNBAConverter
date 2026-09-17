@@ -49,11 +49,11 @@ def locate_id (name):
 
 #poke api stuff: 
 
-def load_kanto_dex_files ():
+def create_kanto_dex_files (fileName):
     #loading takes multiple minutes, that's why its doesn't make sense to fetch data from api constantly, and file writing is better
-    load_pokedex_files(1, 151)
+    create_pokedex_files(1, 151, fileName = "kanto")
 
-def load_pokedex_files (num1, num2):
+def create_pokedex_files (num1, num2, fileName):
     # loads pokemon with pokedex numbers from num1 - num2, including both
 
     data = {} 
@@ -67,20 +67,25 @@ def load_pokedex_files (num1, num2):
         data [temp.name] = statList
 
         print(temp.name, "is loaded")
-
-    #pokedex_as_json = json.dumps(data) 
-    #print(poke_as_json)
     
-    with open("test.json", "w") as f:
+    with open(fileName, "w") as f:
         json.dump(data, f) # add index = 1 or something if wanted to look different, i didn't because I don't wanna run again
 
 
-def turn_file_to_object():
-    pass
+def turn_file_to_object(file):
+
+    result = []
+
+    with open(file, "r") as f:
+        data = json.load(f)
+    
+    for i in data: 
+        statList = data[i]
+        temp = stat_matcher.Pokemon(i, statList[0], statList[1], statList[2], statList[3], statList[4], statList[5])
+        result.append(temp)
+        
+    return result
+    
 
 #should be ran only once, if you don't already have the files downloaded so they can be created automatically.
-#load_kanto_dex_files() 
-
-#print(create_player("Stephen Curry").find_6_closest())
-
-turn_file_to_object()
+#create_kanto_dex_files() 
