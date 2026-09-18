@@ -60,10 +60,10 @@ class Player:
         #sort the results array based off similarity 
         results.sort(reverse = True, key = lambda x : x[1])
 
-        top6 = []
+        top6 = {}
 
         for i in range(6):
-            top6.append(results[i])
+            top6[results[i][0]] = results[i][1] # gets the top 6 players only, and stores them in a dictionary of name : similarity
 
         return top6
 

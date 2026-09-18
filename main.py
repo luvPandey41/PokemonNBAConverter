@@ -8,15 +8,19 @@ import stat_matcher
 # fetch pokemon data from api --> create kanto pokeomn with that data --> 
 # calculate similarity with all 151 kanto pokemon --> return the top 6 most similar pokemon, with their percentages
 
-print("Enter your player: ") 
-name = input()
+def find_pokemons_for_player (name):
+       p = api_manager.create_player(name) #make the player object by the name of whatever was inputed
 
-p = api_manager.create_player(name) #make the player object by the name of whatever was inputed
+       mons = []
+       mons = api_manager.turn_file_to_object("test.json") # render all 151 pokemon
 
-mons = []
-mons = api_manager.turn_file_to_object("test.json") # render all 151 pokemon
+       return p.find_6_closest(mons)
 
-top6 = p.find_6_closest(mons)
+def prompt():
+       #print("Enter your player: ") 
+       name = "lebron james" #input
+       return find_pokemons_for_player(name)
 
-for pokemon, similarity in top6:
-       print(pokemon, similarity)
+       #print(results)
+
+#prompt()
