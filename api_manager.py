@@ -88,4 +88,4 @@ def turn_file_to_object(file):
     
 
 #should be ran only once, if you don't already have the files downloaded so they can be created automatically.
-#create_kanto_dex_files() 
+#create_kanto_dex_files(pokemon_data.json) 

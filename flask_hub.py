@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import main
 
 app = Flask(__name__)
@@ -7,10 +7,18 @@ app = Flask(__name__)
 @app.route("/match", methods=["POST"])
 def match():
     data = request.get_json()
+    player = data.get("player")
 
-    return jsonify()({
-        "data recieved": data
+    pokemon_data = main.find_pokemons_for_player(player)
+
+    return jsonify({
+        "player": player,
+        "stats" : pokemon_data
     })
+
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 @app.route("/pokemon")
 def index():

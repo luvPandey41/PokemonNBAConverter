@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head> 
+    <meta charset = "UTF-8">
+    <title>Pokemon NBA Converter</title>
+</head>
+
+<body>
+
+    <h1> Pokemon NBA Converter</h1>
+    
+    <form id="player-form">
+        <label for="name">Player name:</label>
+        <input type="text" id="name" name="name">
+            
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id = "results"> </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

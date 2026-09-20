@@ -12,7 +12,7 @@ def find_pokemons_for_player (name):
        p = api_manager.create_player(name) #make the player object by the name of whatever was inputed
 
        mons = []
-       mons = api_manager.turn_file_to_object("test.json") # render all 151 pokemon
+       mons = api_manager.turn_file_to_object("pokemon_data.json") # render all 151 pokemon
 
        return p.find_6_closest(mons)
 
