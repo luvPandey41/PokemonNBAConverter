@@ -1,6 +1,7 @@
 from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.endpoints import leaguedashptstats
 from nba_api.stats.static import players
+from nba_api.stats.endpoints import CommonTeamRoster
 import math
 import json
 import stat_matcher
@@ -86,6 +87,15 @@ def turn_file_to_object(file):
         
     return result
     
+
+roster = CommonTeamRoster(
+    team_id=1610612747,
+    season="2025-26"
+)
+
+players = roster.get_data_frames()[0]
+
+print(players)
 
 #should be ran only once, if you don't already have the files downloaded so they can be created automatically.
 #create_kanto_dex_files(pokemon_data.json) 

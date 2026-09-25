@@ -20,17 +20,5 @@ def match():
 def home():
     return render_template("index.html")
 
-@app.route("/pokemon")
-def index():
-    name = request.args.get("player")
-    name = name.lower()
-
-    pokemon_data = main.find_pokemons_for_player(name)
-
-    return jsonify({
-        "player": name,
-        "stats": pokemon_data
-    })
-
 if __name__ == "__main__":
     app.run(debug=True)

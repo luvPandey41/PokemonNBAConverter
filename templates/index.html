@@ -3,23 +3,212 @@
 
 <head> 
     <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon NBA Converter</title>
+    <link rel="stylesheet" href="/Users/luvpandey/PokemonNBAConverter/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+
 </head>
 
-<body>
+<body style="background-color: #FAF3DD;">
 
-    <h1> Pokemon NBA Converter</h1>
+    <br>
+    <h1 style =  "margin-top: 36px; font-size: 64px; text-align: center; font-family: Poppins, sans-serif; font-weight: 800; color: #2F3E46;">
+        NBA <span style="color: #46a497;"> Pokémon </span> Converter
+    </h1>
+    <p style = "font-size: 20px; text-align: center; font-family: Poppins, sans-serif; font-weight: 500; color: #527985; margin-top: 8px">
+        Find the Pokémon statistically closest to NBA Players
+    </p>    
     
-    <form id="player-form">
-        <label for="name">Player name:</label>
-        <input type="text" id="name" name="name">
-            
-        <input type="submit" value="Submit">
-    </form>
+    <div style="text-align: center; margin-top: 40px;">
+    
+        <div style="position: relative; display: inline-block">
+            <span style = "position: absolute; left: 22px; font-size: 27px; color: #789096; margin-top: 20px;"> ⌕ </span>
+            <input 
+                type="text" 
+                placeholder= "Enter NBA Player Name (e.g LeBron James)"
+                style = "width: 680px; height: 75px; padding: 0 25px 0px 60px; font-size: 18px; border: 2px solid #D9E2E1; 
+                    border-radius: 15px; background-color: #FFFFFF; color: #2F3E46; font-family: Poppins, sans-serif"
+            >
+        </div>
 
-    <div id = "results"> </div>
+        <button class = "search-button"> Search </button>
 
+        <div style = "margin-top: 40px; display: flex; gap: 25px; color: #789096; font-size: 18px; font-weight: 600; align-items: center;">
+            <div style = "margin-left: 320px; height: 1px; background-color: #C7D2D0; flex: 1;"> </div>
+            <span style = "font-weight: 800; font-family: Poppins, sans-serif; font-size: 24px"> OR </span>
+            <div style = "margin-right: 320px; height: 1px; background-color: #C7D2D0; flex: 1;"> </div>
+        </div>
 
+        <h2 style = "text-align: center; font-size: 42px; font-weight: 700; color: #2F3E46; font-family: Poppins, sans-serif; margin-top: 20px">
+            Browse by Team
+        </h2>
+
+        <p style = "margin-top: 5px; color: #527985; font-size: 18px; font-family: Poppins, sans-serif">
+            Select a team to view its players and find their Pokémon matches.
+        </p>
+
+    </div>
+
+    <div style = "display: grid; grid-template-columns: auto auto auto auto auto auto; gap: 18px; margin: 40px 80px 80px 80px; padding-bottom: 100px">
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612747/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Lakers</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Nuggets</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Mavericks</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612741/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Bulls</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Hawks</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Celtics</p>
+        </button>
+        
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Warriors</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612750/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Timberwolves</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612745/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Rockets</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612739/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Cavaliers</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Hornets</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612751/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Nets</p>
+        </button>
+        
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612758/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Kings</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Thunder</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612763/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Grizzlies</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Pistons</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612748/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Heat</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612752/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Knicks</p>
+        </button>
+        
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612746/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Clippers</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612757/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Trail Blazers</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Pelicans</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Pacers</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612753/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Magic</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>76ers</p>
+        </button>
+        
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612756/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Suns</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612762/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Jazz</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612759/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Spurs</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Bucks</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Wizards</p>
+        </button>
+        
+        <button class="team-button"> 
+            <img src="https://cdn.nba.com/logos/nba/1610612761/global/L/logo.svg" style="margin-right: 8px; width: 50px; height: 50px; object-fit: contain;">
+            <p>Raptors</p>
+        </button>
+
+    </div>
+
+</body>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
