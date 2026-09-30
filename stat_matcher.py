@@ -63,7 +63,7 @@ class Player:
         top6 = {}
 
         for i in range(6):
-            top6[results[i][0]] = results[i][1] # gets the top 6 players only, and stores them in a dictionary of name : similarity
+            top6[results[i][0]] = results[i][1] # getx the top 6 players only, and stores them in a dictionary of name : similarity
 
         return top6
 

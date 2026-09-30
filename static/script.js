@@ -1,4 +1,4 @@
-    function openBox(teamID) {
+    async function openBox(teamID) {
 
         const team = teams.find(function(team) {
             return team.id === teamID;
@@ -13,6 +13,10 @@
         document.getElementById("team-box-title").innerHTML = team.name;
 
         const playerList = document.getElementById("player-list");
+
+        const response = await fetch(`/roster/${teamID}`);
+
+        const players = await response.json();
 
         players.forEach(function(player) {
 
@@ -36,19 +40,20 @@
 
         const image = document.createElement("img");
         image.classList.add("player-image");
-        image.src = `https://cdn.nba.com/headshots/nba/latest/260x190/${player.id}.png`;
+        image.src = `https://cdn.nba.com/headshots/nba/latest/260x190/${player.PLAYER_ID}.png`;
 
         const details = document.createElement("div");
         details.classList.add("player-details");
 
         const name = document.createElement("span");
         name.classList.add("player-name");
-        name.innerHTML = player.name;
+        name.innerHTML = player.PLAYER;
 
         const position = document.createElement("span");
         position.classList.add("player-position");
-        position.innerHTML = player.position;
+        position.innerHTML = player.POSITION;
 
+        
 
         button.append(image);
 

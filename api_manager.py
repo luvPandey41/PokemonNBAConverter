@@ -88,10 +88,14 @@ def turn_file_to_object(file):
     return result
     
 
-roster = CommonTeamRoster(
-    team_id=1610612747,
-    season="2025-26"
-)
+def getRoster(id):
+    roster = CommonTeamRoster(team_id = id, season = "2025-26")
+
+    players = roster.get_data_frames()[0]
+
+    return players.to_dict(orient="records")
+
+
 
 #should be ran only once, if you don't already have the files downloaded so they can be created automatically.
 #create_kanto_dex_files(pokemon_data.json) 
