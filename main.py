@@ -23,8 +23,9 @@ def prompt():
 
        #print(results)
 
-def getRoster(teamId):
-       return api_manager.getRoster(teamId)
+def get_roster(teamId):
+
+       return api_manager.get_roster(teamId)
 
 
 #prompt()

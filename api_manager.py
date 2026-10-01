@@ -88,12 +88,68 @@ def turn_file_to_object(file):
     return result
     
 
-def getRoster(id):
+def get_roster(id):
+
+    if(roster_exists(id)):
+        return find_roster(id)
+    else:
+        add_roster(id)
+        return get_roster(id) #W recursive design?
+        
+
+def find_roster(id):
+
+    with open("team_data.json", "r") as f:
+        data = json.load(f)
+
+    for i in data:
+        if int(i) == id:
+            return data[i]
+        
+    print("If you are seeing this in the terminal, somehow get_roster broke")
+
+def add_roster(id):
+
     roster = CommonTeamRoster(team_id = id, season = "2025-26")
 
-    players = roster.get_data_frames()[0]
+    players = roster.get_data_frames()[0] #0 is the team roster, 1 is the coach roster apparently
 
-    return players.to_dict(orient="records")
+    player_list = []
+
+    for i in range (len(players)):
+
+        player = players.loc[i]
+        player_dict = {}
+
+        player_dict["Name"] = player["PLAYER"]
+        player_dict["Position"] = player["POSITION"]
+        player_dict["PlayerID"] = int(player["PLAYER_ID"])
+
+        player_list.append(player_dict)
+
+    with open("team_data.json", "r") as f:
+        data = json.load(f)
+
+    data[id] = player_list #no need to worry about overwiting since this method only runs if data[id] doesn't already exist
+    
+
+    with open("team_data.json", "w") as f:
+        f.write("\n")
+    
+        json.dump(data, f, indent = 4)
+    
+
+
+def roster_exists(id):
+    with open("team_data.json", "r") as f:
+        data = json.load(f)
+
+    for i in data:
+        if int(i) == id:
+            return True
+
+    return False
+
 
 
 

@@ -1,0 +1,903 @@
+
+{
+    "1610612747": [
+        {
+            "Name": "Adou Thiero",
+            "Position": "G",
+            "PlayerID": 1642876
+        },
+        {
+            "Name": "Jarred Vanderbilt",
+            "Position": "F",
+            "PlayerID": 1629020
+        },
+        {
+            "Name": "Dalton Knecht",
+            "Position": "F",
+            "PlayerID": 1642261
+        },
+        {
+            "Name": "Deandre Ayton",
+            "Position": "C",
+            "PlayerID": 1629028
+        },
+        {
+            "Name": "Bronny James",
+            "Position": "G",
+            "PlayerID": 1642355
+        },
+        {
+            "Name": "Luke Kennard",
+            "Position": "G",
+            "PlayerID": 1628379
+        },
+        {
+            "Name": "Jaxson Hayes",
+            "Position": "C-F",
+            "PlayerID": 1629637
+        },
+        {
+            "Name": "Jake LaRavia",
+            "Position": "F",
+            "PlayerID": 1631222
+        },
+        {
+            "Name": "Maxi Kleber",
+            "Position": "F",
+            "PlayerID": 1628467
+        },
+        {
+            "Name": "Austin Reaves",
+            "Position": "G",
+            "PlayerID": 1630559
+        },
+        {
+            "Name": "Drew Timme",
+            "Position": "F",
+            "PlayerID": 1631166
+        },
+        {
+            "Name": "Nick Smith Jr.",
+            "Position": "G",
+            "PlayerID": 1641733
+        },
+        {
+            "Name": "LeBron James",
+            "Position": "F",
+            "PlayerID": 2544
+        },
+        {
+            "Name": "Rui Hachimura",
+            "Position": "F",
+            "PlayerID": 1629060
+        },
+        {
+            "Name": "Chris Ma\u00f1on",
+            "Position": "G",
+            "PlayerID": 1643024
+        },
+        {
+            "Name": "Marcus Smart",
+            "Position": "G",
+            "PlayerID": 203935
+        },
+        {
+            "Name": "Luka Don\u010di\u0107",
+            "Position": "F-G",
+            "PlayerID": 1629029
+        }
+    ],
+    "1610612737": [
+        {
+            "Name": "Keshon Gilbert",
+            "Position": "G",
+            "PlayerID": 1642933
+        },
+        {
+            "Name": "RayJ Dennis",
+            "Position": "G",
+            "PlayerID": 1642484
+        },
+        {
+            "Name": "Jonathan Kuminga",
+            "Position": "F",
+            "PlayerID": 1630228
+        },
+        {
+            "Name": "Jalen Johnson",
+            "Position": "F",
+            "PlayerID": 1630552
+        },
+        {
+            "Name": "Keaton Wallace",
+            "Position": "G",
+            "PlayerID": 1630811
+        },
+        {
+            "Name": "CJ McCollum",
+            "Position": "G",
+            "PlayerID": 203468
+        },
+        {
+            "Name": "Gabe Vincent",
+            "Position": "G",
+            "PlayerID": 1629216
+        },
+        {
+            "Name": "Dyson Daniels",
+            "Position": "G",
+            "PlayerID": 1630700
+        },
+        {
+            "Name": "Nickeil Alexander-Walker",
+            "Position": "G",
+            "PlayerID": 1629638
+        },
+        {
+            "Name": "Buddy Hield",
+            "Position": "G",
+            "PlayerID": 1627741
+        },
+        {
+            "Name": "Zaccharie Risacher",
+            "Position": "F",
+            "PlayerID": 1642258
+        },
+        {
+            "Name": "Christian Koloko",
+            "Position": "C",
+            "PlayerID": 1631132
+        },
+        {
+            "Name": "Tony Bradley",
+            "Position": "C-F",
+            "PlayerID": 1628396
+        },
+        {
+            "Name": "Asa Newell",
+            "Position": "F",
+            "PlayerID": 1642854
+        },
+        {
+            "Name": "Onyeka Okongwu",
+            "Position": "F-C",
+            "PlayerID": 1630168
+        },
+        {
+            "Name": "Mouhamed Gueye",
+            "Position": "F",
+            "PlayerID": 1631243
+        },
+        {
+            "Name": "Corey Kispert",
+            "Position": "F",
+            "PlayerID": 1630557
+        },
+        {
+            "Name": "Jock Landale",
+            "Position": "C",
+            "PlayerID": 1629111
+        }
+    ],
+    "1610612744": [
+        {
+            "Name": "Gary Payton II",
+            "Position": "G",
+            "PlayerID": 1627780
+        },
+        {
+            "Name": "Brandin Podziemski",
+            "Position": "G",
+            "PlayerID": 1641764
+        },
+        {
+            "Name": "Will Richard",
+            "Position": "G",
+            "PlayerID": 1642954
+        },
+        {
+            "Name": "Moses Moody",
+            "Position": "G",
+            "PlayerID": 1630541
+        },
+        {
+            "Name": "Kristaps Porzi\u0146\u0123is",
+            "Position": "F-C",
+            "PlayerID": 204001
+        },
+        {
+            "Name": "De'Anthony Melton",
+            "Position": "G",
+            "PlayerID": 1629001
+        },
+        {
+            "Name": "Jimmy Butler III",
+            "Position": "F",
+            "PlayerID": 202710
+        },
+        {
+            "Name": "Gui Santos",
+            "Position": "F",
+            "PlayerID": 1630611
+        },
+        {
+            "Name": "LJ Cryer",
+            "Position": "G",
+            "PlayerID": 1643018
+        },
+        {
+            "Name": "Nate Williams",
+            "Position": "G",
+            "PlayerID": 1631466
+        },
+        {
+            "Name": "Al Horford",
+            "Position": "C-F",
+            "PlayerID": 201143
+        },
+        {
+            "Name": "Quinten Post",
+            "Position": "C",
+            "PlayerID": 1642366
+        },
+        {
+            "Name": "Draymond Green",
+            "Position": "F",
+            "PlayerID": 203110
+        },
+        {
+            "Name": "Charles Bassey",
+            "Position": "C-F",
+            "PlayerID": 1629646
+        },
+        {
+            "Name": "Stephen Curry",
+            "Position": "G",
+            "PlayerID": 201939
+        },
+        {
+            "Name": "Seth Curry",
+            "Position": "G",
+            "PlayerID": 203552
+        },
+        {
+            "Name": "Malevy Leons",
+            "Position": "F",
+            "PlayerID": 1642502
+        },
+        {
+            "Name": "Pat Spencer",
+            "Position": "G",
+            "PlayerID": 1630311
+        }
+    ],
+    "1610612745": [
+        {
+            "Name": "Aaron Holiday",
+            "Position": "G",
+            "PlayerID": 1628988
+        },
+        {
+            "Name": "Amen Thompson",
+            "Position": "G-F",
+            "PlayerID": 1641708
+        },
+        {
+            "Name": "Dorian Finney-Smith",
+            "Position": "F",
+            "PlayerID": 1627827
+        },
+        {
+            "Name": "JD Davison",
+            "Position": "G",
+            "PlayerID": 1631120
+        },
+        {
+            "Name": "Fred VanVleet",
+            "Position": "G",
+            "PlayerID": 1627832
+        },
+        {
+            "Name": "Kevin Durant",
+            "Position": "F",
+            "PlayerID": 201142
+        },
+        {
+            "Name": "Jae'Sean Tate",
+            "Position": "F",
+            "PlayerID": 1630256
+        },
+        {
+            "Name": "Jabari Smith Jr.",
+            "Position": "F",
+            "PlayerID": 1631095
+        },
+        {
+            "Name": "Steven Adams",
+            "Position": "C",
+            "PlayerID": 203500
+        },
+        {
+            "Name": "Tristen Newton",
+            "Position": "G",
+            "PlayerID": 1641803
+        },
+        {
+            "Name": "Reed Sheppard",
+            "Position": "G",
+            "PlayerID": 1642263
+        },
+        {
+            "Name": "Tari Eason",
+            "Position": "F",
+            "PlayerID": 1631106
+        },
+        {
+            "Name": "Josh Okogie",
+            "Position": "G",
+            "PlayerID": 1629006
+        },
+        {
+            "Name": "Isaiah Crawford",
+            "Position": "F",
+            "PlayerID": 1642384
+        },
+        {
+            "Name": "Alperen Sengun",
+            "Position": "C",
+            "PlayerID": 1630578
+        },
+        {
+            "Name": "Clint Capela",
+            "Position": "C",
+            "PlayerID": 203991
+        },
+        {
+            "Name": "Jeff Green",
+            "Position": "F",
+            "PlayerID": 201145
+        }
+    ],
+    "1610612759": [
+        {
+            "Name": "Jordan McLaughlin",
+            "Position": "G",
+            "PlayerID": 1629162
+        },
+        {
+            "Name": "Victor Wembanyama",
+            "Position": "F-C",
+            "PlayerID": 1641705
+        },
+        {
+            "Name": "Dylan Harper",
+            "Position": "G",
+            "PlayerID": 1642844
+        },
+        {
+            "Name": "Keldon Johnson",
+            "Position": "F-G",
+            "PlayerID": 1629640
+        },
+        {
+            "Name": "De'Aaron Fox",
+            "Position": "G",
+            "PlayerID": 1628368
+        },
+        {
+            "Name": "Stephon Castle",
+            "Position": "G",
+            "PlayerID": 1642264
+        },
+        {
+            "Name": "Luke Kornet",
+            "Position": "C-F",
+            "PlayerID": 1628436
+        },
+        {
+            "Name": "Kelly Olynyk",
+            "Position": "F-C",
+            "PlayerID": 203482
+        },
+        {
+            "Name": "Carter Bryant",
+            "Position": "F",
+            "PlayerID": 1642868
+        },
+        {
+            "Name": "Emanuel Miller",
+            "Position": "F",
+            "PlayerID": 1641801
+        },
+        {
+            "Name": "Bismack Biyombo",
+            "Position": "C",
+            "PlayerID": 202687
+        },
+        {
+            "Name": "Devin Vassell",
+            "Position": "G-F",
+            "PlayerID": 1630170
+        },
+        {
+            "Name": "David Jones Garcia",
+            "Position": "G",
+            "PlayerID": 1642357
+        },
+        {
+            "Name": "Julian Champagnie",
+            "Position": "F",
+            "PlayerID": 1630577
+        },
+        {
+            "Name": "Harrison Barnes",
+            "Position": "F",
+            "PlayerID": 203084
+        },
+        {
+            "Name": "Lindy Waters III",
+            "Position": "F",
+            "PlayerID": 1630322
+        },
+        {
+            "Name": "Mason Plumlee",
+            "Position": "F-C",
+            "PlayerID": 203486
+        },
+        {
+            "Name": "Harrison Ingram",
+            "Position": "F",
+            "PlayerID": 1631127
+        }
+    ],
+    "1610612743": [
+        {
+            "Name": "Christian Braun",
+            "Position": "G",
+            "PlayerID": 1631128
+        },
+        {
+            "Name": "Curtis Jones",
+            "Position": "G",
+            "PlayerID": 1642938
+        },
+        {
+            "Name": "Julian Strawther",
+            "Position": "G",
+            "PlayerID": 1631124
+        },
+        {
+            "Name": "Tyus Jones",
+            "Position": "G",
+            "PlayerID": 1626145
+        },
+        {
+            "Name": "Peyton Watson",
+            "Position": "G",
+            "PlayerID": 1631212
+        },
+        {
+            "Name": "Tim Hardaway Jr.",
+            "Position": "G-F",
+            "PlayerID": 203501
+        },
+        {
+            "Name": "Bruce Brown",
+            "Position": "G-F",
+            "PlayerID": 1628971
+        },
+        {
+            "Name": "DaRon Holmes II",
+            "Position": "F",
+            "PlayerID": 1641747
+        },
+        {
+            "Name": "Nikola Joki\u0107",
+            "Position": "C",
+            "PlayerID": 203999
+        },
+        {
+            "Name": "Jonas Valan\u010di\u016bnas",
+            "Position": "C",
+            "PlayerID": 202685
+        },
+        {
+            "Name": "Spencer Jones",
+            "Position": "F",
+            "PlayerID": 1642461
+        },
+        {
+            "Name": "Zeke Nnaji",
+            "Position": "F-C",
+            "PlayerID": 1630192
+        },
+        {
+            "Name": "Cameron Johnson",
+            "Position": "F",
+            "PlayerID": 1629661
+        },
+        {
+            "Name": "Jalen Pickett",
+            "Position": "G",
+            "PlayerID": 1629618
+        },
+        {
+            "Name": "KJ Simpson",
+            "Position": "G",
+            "PlayerID": 1642354
+        },
+        {
+            "Name": "Jamal Murray",
+            "Position": "G",
+            "PlayerID": 1627750
+        },
+        {
+            "Name": "Aaron Gordon",
+            "Position": "F",
+            "PlayerID": 203932
+        },
+        {
+            "Name": "David Roddy",
+            "Position": "F",
+            "PlayerID": 1631223
+        }
+    ],
+    "1610612742": [
+        {
+            "Name": "John Poulakidas",
+            "Position": "G",
+            "PlayerID": 1642967
+        },
+        {
+            "Name": "Max Christie",
+            "Position": "G",
+            "PlayerID": 1631108
+        },
+        {
+            "Name": "Dereck Lively II",
+            "Position": "C",
+            "PlayerID": 1641726
+        },
+        {
+            "Name": "Dwight Powell",
+            "Position": "F-C",
+            "PlayerID": 203939
+        },
+        {
+            "Name": "AJ Johnson",
+            "Position": "G",
+            "PlayerID": 1642358
+        },
+        {
+            "Name": "Ryan Nembhard",
+            "Position": "G",
+            "PlayerID": 1642948
+        },
+        {
+            "Name": "Brandon Williams",
+            "Position": "G",
+            "PlayerID": 1630314
+        },
+        {
+            "Name": "Kyrie Irving",
+            "Position": "G",
+            "PlayerID": 202681
+        },
+        {
+            "Name": "Naji Marshall",
+            "Position": "F",
+            "PlayerID": 1630230
+        },
+        {
+            "Name": "Caleb Martin",
+            "Position": "F",
+            "PlayerID": 1628997
+        },
+        {
+            "Name": "Khris Middleton",
+            "Position": "F",
+            "PlayerID": 203114
+        },
+        {
+            "Name": "Daniel Gafford",
+            "Position": "F-C",
+            "PlayerID": 1629655
+        },
+        {
+            "Name": "Tyler Smith",
+            "Position": "F",
+            "PlayerID": 1641890
+        },
+        {
+            "Name": "P.J. Washington",
+            "Position": "F",
+            "PlayerID": 1629023
+        },
+        {
+            "Name": "Moussa Cisse",
+            "Position": "C",
+            "PlayerID": 1630619
+        },
+        {
+            "Name": "Klay Thompson",
+            "Position": "G",
+            "PlayerID": 202691
+        },
+        {
+            "Name": "Cooper Flagg",
+            "Position": "F",
+            "PlayerID": 1642843
+        },
+        {
+            "Name": "Marvin Bagley III",
+            "Position": "F",
+            "PlayerID": 1628963
+        }
+    ],
+    "1610612764": [
+        {
+            "Name": "Julian Reese",
+            "Position": "F",
+            "PlayerID": 1642882
+        },
+        {
+            "Name": "Bilal Coulibaly",
+            "Position": "G",
+            "PlayerID": 1641731
+        },
+        {
+            "Name": "Tristan Vukcevic",
+            "Position": "F",
+            "PlayerID": 1641774
+        },
+        {
+            "Name": "Cam Whitmore",
+            "Position": "F",
+            "PlayerID": 1641715
+        },
+        {
+            "Name": "Trae Young",
+            "Position": "G",
+            "PlayerID": 1629027
+        },
+        {
+            "Name": "D'Angelo Russell",
+            "Position": "G",
+            "PlayerID": 1626156
+        },
+        {
+            "Name": "Jamir Watkins",
+            "Position": "F",
+            "PlayerID": 1642364
+        },
+        {
+            "Name": "Bub Carrington",
+            "Position": "G",
+            "PlayerID": 1642267
+        },
+        {
+            "Name": "Jaden Hardy",
+            "Position": "G",
+            "PlayerID": 1630702
+        },
+        {
+            "Name": "Justin Champagnie",
+            "Position": "G-F",
+            "PlayerID": 1630551
+        },
+        {
+            "Name": "Tre Johnson",
+            "Position": "G",
+            "PlayerID": 1642848
+        },
+        {
+            "Name": "Leaky Black",
+            "Position": "F",
+            "PlayerID": 1641778
+        },
+        {
+            "Name": "Sharife Cooper",
+            "Position": "G",
+            "PlayerID": 1630536
+        },
+        {
+            "Name": "Anthony Gill",
+            "Position": "F",
+            "PlayerID": 1630264
+        },
+        {
+            "Name": "Kyshawn George",
+            "Position": "F",
+            "PlayerID": 1642273
+        },
+        {
+            "Name": "Alex Sarr",
+            "Position": "C",
+            "PlayerID": 1642259
+        },
+        {
+            "Name": "Anthony Davis",
+            "Position": "F-C",
+            "PlayerID": 203076
+        },
+        {
+            "Name": "Will Riley",
+            "Position": "F",
+            "PlayerID": 1642860
+        }
+    ],
+    "1610612761": [
+        {
+            "Name": "A.J. Lawson",
+            "Position": "G",
+            "PlayerID": 1630639
+        },
+        {
+            "Name": "Gradey Dick",
+            "Position": "G-F",
+            "PlayerID": 1641711
+        },
+        {
+            "Name": "Jonathan Mogbo",
+            "Position": "F",
+            "PlayerID": 1642367
+        },
+        {
+            "Name": "Brandon Ingram",
+            "Position": "F",
+            "PlayerID": 1627742
+        },
+        {
+            "Name": "Scottie Barnes",
+            "Position": "F-G",
+            "PlayerID": 1630567
+        },
+        {
+            "Name": "Immanuel Quickley",
+            "Position": "G",
+            "PlayerID": 1630193
+        },
+        {
+            "Name": "RJ Barrett",
+            "Position": "F-G",
+            "PlayerID": 1629628
+        },
+        {
+            "Name": "Collin Murray-Boyles",
+            "Position": "F",
+            "PlayerID": 1642867
+        },
+        {
+            "Name": "Ja'Kobe Walter",
+            "Position": "G",
+            "PlayerID": 1642266
+        },
+        {
+            "Name": "Garrett Temple",
+            "Position": "G-F",
+            "PlayerID": 202066
+        },
+        {
+            "Name": "Jakob Poeltl",
+            "Position": "C",
+            "PlayerID": 1627751
+        },
+        {
+            "Name": "Jamal Shead",
+            "Position": "G",
+            "PlayerID": 1642347
+        },
+        {
+            "Name": "Chucky Hepburn",
+            "Position": "G",
+            "PlayerID": 1642935
+        },
+        {
+            "Name": "Trayce Jackson-Davis",
+            "Position": "F",
+            "PlayerID": 1631218
+        },
+        {
+            "Name": "Sandro Mamukelashvili",
+            "Position": "F-C",
+            "PlayerID": 1630572
+        },
+        {
+            "Name": "Alijah Martin",
+            "Position": "G",
+            "PlayerID": 1642918
+        },
+        {
+            "Name": "Jamison Battle",
+            "Position": "F",
+            "PlayerID": 1642419
+        }
+    ],
+    "1610612749": [
+        {
+            "Name": "Jericho Sims",
+            "Position": "C",
+            "PlayerID": 1630579
+        },
+        {
+            "Name": "Myles Turner",
+            "Position": "C-F",
+            "PlayerID": 1626167
+        },
+        {
+            "Name": "Gary Trent Jr.",
+            "Position": "G",
+            "PlayerID": 1629018
+        },
+        {
+            "Name": "Kevin Porter Jr.",
+            "Position": "G-F",
+            "PlayerID": 1629645
+        },
+        {
+            "Name": "Bobby Portis",
+            "Position": "F",
+            "PlayerID": 1626171
+        },
+        {
+            "Name": "Gary Harris",
+            "Position": "G",
+            "PlayerID": 203914
+        },
+        {
+            "Name": "Taurean Prince",
+            "Position": "F",
+            "PlayerID": 1627752
+        },
+        {
+            "Name": "Ryan Rollins",
+            "Position": "G",
+            "PlayerID": 1631157
+        },
+        {
+            "Name": "Kyle Kuzma",
+            "Position": "F",
+            "PlayerID": 1628398
+        },
+        {
+            "Name": "AJ Green",
+            "Position": "G",
+            "PlayerID": 1631260
+        },
+        {
+            "Name": "Ousmane Dieng",
+            "Position": "F",
+            "PlayerID": 1631172
+        },
+        {
+            "Name": "Alex Antetokounmpo",
+            "Position": "F",
+            "PlayerID": 1630828
+        },
+        {
+            "Name": "Cormac Ryan",
+            "Position": "G",
+            "PlayerID": 1642504
+        },
+        {
+            "Name": "Giannis Antetokounmpo",
+            "Position": "F",
+            "PlayerID": 203507
+        },
+        {
+            "Name": "Pete Nance",
+            "Position": "F",
+            "PlayerID": 1631250
+        },
+        {
+            "Name": "Thanasis Antetokounmpo",
+            "Position": "F",
+            "PlayerID": 203648
+        },
+        {
+            "Name": "Andre Jackson Jr.",
+            "Position": "G",
+            "PlayerID": 1641748
+        }
+    ]
+}

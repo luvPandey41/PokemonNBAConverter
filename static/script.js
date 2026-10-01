@@ -18,6 +18,8 @@
 
         const players = await response.json();
 
+        playerList.innerHTML = "";
+
         players.forEach(function(player) {
 
             const button = createPlayer(player);
@@ -40,18 +42,18 @@
 
         const image = document.createElement("img");
         image.classList.add("player-image");
-        image.src = `https://cdn.nba.com/headshots/nba/latest/260x190/${player.PLAYER_ID}.png`;
+        image.src = `https://cdn.nba.com/headshots/nba/latest/260x190/${player.PlayerID}.png`;
 
         const details = document.createElement("div");
         details.classList.add("player-details");
 
         const name = document.createElement("span");
         name.classList.add("player-name");
-        name.innerHTML = player.PLAYER;
+        name.innerHTML = player.Name;
 
         const position = document.createElement("span");
         position.classList.add("player-position");
-        position.innerHTML = player.POSITION;
+        position.innerHTML = player.Position;
 
         
 
@@ -97,29 +99,6 @@
         { name: "Wizards", id: 1610612764 },
         { name: "Raptors", id: 1610612761 },
         { name: "Bucks", id: 1610612749 }
-    ];
-
-    const players = [
-        {
-            name: "LeBron James",
-            position: "Forward",
-            id: 2544
-        },
-        {
-            name: "Anthony Davis",
-            position: "Center",
-            id: 203076
-        },
-        {
-            name: "Austin Reaves",
-            position: "Guard",
-            id: 1630559
-        },
-        {
-            name: "Rui Hachimura",
-            position: "Forward",
-            id: 1629060
-        }
     ];
 
     const teamContainer = document.getElementById("team-container");
