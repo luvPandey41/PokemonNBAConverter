@@ -27,7 +27,17 @@
             playerList.append(button);
 
         });
+
+        document.addEventListener("click", HandleBoxClick); //Apparently you have to send functions this way instead of inline declerations for the removeEventListener to work
         
+    }
+
+    function HandleBoxClick(event){
+        console.log("helloooo we got in the big func");
+        if(!document.getElementById("box").contains(event.target)){
+            document.removeEventListener("click", HandleBoxClick);
+            closeBox();
+        }
     }
 
     function closeBox() {
@@ -43,7 +53,6 @@
         const image = document.createElement("img");
         image.classList.add("player-image");
         image.src = `https://cdn.nba.com/headshots/nba/latest/260x190/${player.PlayerID}.png`;
-
         const details = document.createElement("div");
         details.classList.add("player-details");
 
@@ -55,18 +64,18 @@
         position.classList.add("player-position");
         position.innerHTML = player.Position;
 
-        
-
         button.append(image);
 
         button.append(details); 
         details.append(name);
         details.append(position);
 
+        button.onclick = function () {
+            window.location.href = `/results?player_id=${player.PlayerID}`;
+        };
+
         return button;
     }
-
-
 
     const teams = [
         { name: "Lakers", id: 1610612747 },
