@@ -33,7 +33,6 @@
     }
 
     function HandleBoxClick(event){
-        console.log("helloooo we got in the big func");
         if(!document.getElementById("box").contains(event.target)){
             document.removeEventListener("click", HandleBoxClick);
             closeBox();

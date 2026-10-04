@@ -13,6 +13,13 @@ def returnTeam(team_id):
     #make it so that a .json file is checked first before actually doing an api call, avoiding it if possible. No database tho. This should be part of getroster function. 
     return jsonify(main.get_roster(int(team_id)))
 
+@app.route("/player/<player_id>")
+def returnPlayer(player_id):
+    return jsonify({
+        "player": main.get_player(int(player_id)),
+        "pokemons": main.find_pokemons_for_player(int(player_id))
+    })
+
 
 @app.route("/results")
 def results():
@@ -21,5 +28,3 @@ def results():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-

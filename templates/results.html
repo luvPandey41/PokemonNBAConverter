@@ -1,17 +1,137 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html>
 
-<head> 
+<head>
     <meta charset = "UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon NBA Converter Results</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Pokémon NBA Converter</title>
+
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='results.css') }}">
+
+    <link href = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h4>{{player_id}}</h4>
+
+    <header class = "header">
+        <button class = "return-button" onclick = "returnToHome()">← Back to Teams</button>
+        <h1 class = "title">NBA <span>Pokémon</span> Converter</h1>
+    </header>
+
+    <h2 id = "player-name" class = "subtitle"></h2>
+
+    <div class = "middle-section">
+
+        <div class = "player-box">
+
+            <img id = "player-image">
+
+            <div class = "player-info">
+                <img id = "team-logo">
+
+                <div style = "flex-direction: column">
+                    <h3 id = "player-box-name"></h3>
+                    <p id = "player-position-and-team"></p>
+                </div>
+            </div>
+
+            <div class = "player-stats">
+
+                <div class = "stat-group">
+                    <span class = "stat-label">PPG</span>
+                    <span id = "PPG" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">APG</span>
+                    <span id = "APG" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">RPG</span>
+                    <span id = "RPG" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">FG%</span>
+                    <span id = "FG%" class = "stat-value"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class = "comparison-box">
+
+            <div class = "chart-container" style = "width: 400px; height: 400px;">
+                <canvas id = "stats-chart"></canvas>
+            </div>
+
+            <h1 id = "match-display"></h1>
+
+        </div>
+
+
+        <div class = "pokemon-box">
+
+            <img id = "pokemon-img">
+
+            <div class = "pokemon-info">
+
+                <img id = "pokemon-type-1">
+                <img id = "pokemon-type-2">
+
+                <div style = "flex-direction: column">
+                    <h3 id = "pokemon-box-name"></h3>
+                    <p id = "pokemon-genus"></p>
+                </div>
+
+            </div>
+
+            <div class = "pokemon-stats">
+
+                <div class = "stat-group">
+                    <span class = "stat-label">HP</span>
+                    <span id = "HP" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">Atk</span>
+                    <span id = "ATK" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">Def</span>
+                    <span id = "DEF" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">Sp. Atk</span>
+                    <span id = "SPCA" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">Sp. Def</span>
+                    <span id = "SPCD" class = "stat-value"></span>
+                </div>
+
+                <div class = "stat-group">
+                    <span class = "stat-label">Spd</span>
+                    <span id = "SPD" class = "stat-value"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='results.js') }}"></script>
+    <script> setUpResultsData("{{ player_id }}"); </script>
+
 </body>
 
 </html>
-

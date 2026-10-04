@@ -4,13 +4,9 @@ import stat_matcher
 
 #class where all the commands are ran from
 
-# request player --> fetch player data from api --> create player with that data --> 
-# fetch pokemon data from api --> create kanto pokeomn with that data --> 
-# calculate similarity with all 151 kanto pokemon --> return the top 6 most similar pokemon, with their percentages
-
-def find_pokemons_for_player (name):
-       p = api_manager.create_player(name) #make the player object by the name of whatever was inputed
-
+def find_pokemons_for_player (playerID):
+       p = api_manager.create_player(api_manager.locate_name(playerID))
+       
        mons = []
        mons = api_manager.turn_file_to_object("pokemon_data.json") # render all 151 pokemon
 
@@ -18,14 +14,16 @@ def find_pokemons_for_player (name):
 
 def prompt():
        #print("Enter your player: ") 
-       name = "lebron james" #input
-       return find_pokemons_for_player(name)
+       id = 2544 #input
+       return find_pokemons_for_player(id)
 
        #print(results)
 
 def get_roster(teamId):
-
        return api_manager.get_roster(teamId)
+
+def get_player(playerID):
+       return api_manager.get_player(playerID)
 
 
 #prompt()

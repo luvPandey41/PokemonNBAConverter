@@ -1,4 +1,5 @@
 import math
+import api_manager
 
 class Pokemon:
     def __init__ (self, name, hp, atk, spcA, defs, spcD, spd):
@@ -9,10 +10,11 @@ class Pokemon:
         self.defs = defs
         self.spcD = spcD
         self.spd = spd
+        
 
 class Player: 
     # change to nba stat based
-    def __init__ (self, name, ppg, rpg, apg, spg, bpg, gp, mpg, tpct, tpa, rimpct, tdef, fgPct, avgSpd):
+    def __init__ (self, name, ppg, rpg, apg, spg, bpg, gp, mpg, tpct, tpa, rimpct, tdef, fgPct, avgSpd, team, position):
         
         self.name = name
         self.ppg = ppg
@@ -37,6 +39,9 @@ class Player:
         self.spcD = None
         self.spd = None
 
+        self.team = team
+        self.position = position
+
         self.convert_stats()
     
     def convert_stats(self):
@@ -52,10 +57,9 @@ class Player:
     def find_6_closest(self, pokemon):
         results = []
 
-        # find the pokemon that are closest to lebron, add ui and changable player later
         for i in pokemon:
             similarity = calculate_similarity(i, self)
-            results.append((i.name, similarity))
+            results.append((i, similarity)) 
 
         #sort the results array based off similarity 
         results.sort(reverse = True, key = lambda x : x[1])
@@ -63,7 +67,31 @@ class Player:
         top6 = {}
 
         for i in range(6):
-            top6[results[i][0]] = results[i][1] # getx the top 6 players only, and stores them in a dictionary of name : similarity
+
+            tempStats = {}
+            tempStats["Similarity"] = results[i][1]
+            
+            tempStats["HP"] = results[i][0].hp
+            tempStats["ATK"] = results[i][0].atk
+            tempStats["SPCA"] = results[i][0].spcA
+            tempStats["DEF"] = results[i][0].defs
+            tempStats["SPCD"] = results[i][0].spcD
+            tempStats["SPD"] = results[i][0].spd
+
+            tempStats["ID"] = api_manager.get_dex_num(results[i][0].name) # keep this in pokemon data later
+
+            types = api_manager.get_types(tempStats["ID"])
+
+            tempStats["Type1"] = types[0].type.name
+
+            try:
+                tempStats["Type2"] = types[1].type.name
+            except:
+                tempStats["Type2"] = "None"
+
+            tempStats["Genus"] = api_manager.get_genus(tempStats["ID"])
+
+            top6[results[i][0].name] = tempStats
 
         return top6
 
