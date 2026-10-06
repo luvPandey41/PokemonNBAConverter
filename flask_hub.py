@@ -1,7 +1,6 @@
 from flask import Flask, render_template, jsonify, request;
 import main
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -15,10 +14,7 @@ def returnTeam(team_id):
 
 @app.route("/player/<player_id>")
 def returnPlayer(player_id):
-    return jsonify({
-        "player": main.get_player(int(player_id)),
-        "pokemons": main.find_pokemons_for_player(int(player_id))
-    })
+    return jsonify(main.find_pokemons_for_player(player_id)) #player isnt jsonifiable, gotta fix this
 
 
 @app.route("/results")
@@ -28,3 +24,4 @@ def results():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

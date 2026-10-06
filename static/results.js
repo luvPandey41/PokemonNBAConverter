@@ -5,37 +5,33 @@ function returnToHome(){
 async function setUpResultsData(id) {
 
     const response = await fetch (`/player/${id}`);
-    const res = await response.json();
+    const player = await response.json();
     
-    const player = res.player;
-    const mons = res.pokemons;
 
+    console.log(player);
 
-    document.getElementById("player-name").innerHTML = `Results For: ${player.Name}`;
+    document.getElementById("player-name").innerHTML = `Results For: ${player.name}`;
 
     document.getElementById("player-image").src = `https://cdn.nba.com/headshots/nba/latest/260x190/${id}.png`
-    document.getElementById("team-logo").src = `https://cdn.nba.com/logos/nba/${player.TeamID}/global/L/logo.svg`
+    document.getElementById("team-logo").src = `https://cdn.nba.com/logos/nba/${player.team}/global/L/logo.svg`
 
-    document.getElementById("player-box-name").innerHTML = player.Name;
-    document.getElementById("player-position-and-team").innerHTML = `${player.Position}, ${player.Team}`;
+    document.getElementById("player-box-name").innerHTML = player.name;
+    document.getElementById("player-position-and-team").innerHTML = `${player.position}, ${player.teamName}`;
 
-    document.getElementById("PPG").innerHTML = player.PPG;
-    document.getElementById("APG").innerHTML = player.APG;
-    document.getElementById("RPG").innerHTML = player.RPG;
-    document.getElementById("FG%").innerHTML = player.FGPct;
+    document.getElementById("PPG").innerHTML = player.ppg;
+    document.getElementById("APG").innerHTML = player.apg;
+    document.getElementById("RPG").innerHTML = player.rpg;
+    document.getElementById("FG%").innerHTML = player.fgPct;
 
-    const pokemonNames = Object.keys(mons);
+    const currentMon = player.six_closest[0].pokemon //allow this to be changed
 
-    const currentMon = mons[pokemonNames[0]]; //allow this to be changed
+    document.getElementById("pokemon-img").src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentMon.id}.png`;
 
-    document.getElementById("pokemon-img").src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentMon.ID}.png`;
+    document.getElementById("pokemon-box-name").innerHTML = capitalize(currentMon.name)
+    document.getElementById("pokemon-type-1").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${currentMon.type1}.svg`
+    document.getElementById("pokemon-type-2").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${currentMon.type2}.svg`
 
-    document.getElementById("pokemon-box-name").innerHTML = pokemonNames[0].charAt(0).toUpperCase() + pokemonNames[0].substring(1, pokemonNames[0].length);
-   
-    document.getElementById("pokemon-type-1").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${currentMon.Type1}.svg`
-    document.getElementById("pokemon-type-2").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${currentMon.Type2}.svg`
-
-    if(currentMon.Type2 == "None") {
+    if(currentMon.type2 == null) {
         const x = document.getElementById("pokemon-type-2")
         x.style.visibility = "hidden";
         x.style.width = "0px";
@@ -46,19 +42,19 @@ async function setUpResultsData(id) {
         x.style.width = "40px";
     }
 
-    document.getElementById("pokemon-genus").innerHTML = currentMon.Genus //Make this real later
+    document.getElementById("pokemon-genus").innerHTML = currentMon.genus
 
-    document.getElementById("HP").innerHTML = currentMon.HP;
-    document.getElementById("ATK").innerHTML = currentMon.ATK;
-    document.getElementById("DEF").innerHTML = currentMon.DEF;
-    document.getElementById("SPCA").innerHTML = currentMon.SPCA;
-    document.getElementById("SPCD").innerHTML = currentMon.SPCD;
-    document.getElementById("SPD").innerHTML = currentMon.SPD;
+    document.getElementById("HP").innerHTML = currentMon.hp;
+    document.getElementById("ATK").innerHTML = currentMon.atk;
+    document.getElementById("DEF").innerHTML = currentMon.defs;
+    document.getElementById("SPCA").innerHTML = currentMon.spcA;
+    document.getElementById("SPCD").innerHTML = currentMon.spcD;
+    document.getElementById("SPD").innerHTML = currentMon.spd;
 
-    document.getElementById("match-display").innerHTML = `MATCH: <span>${currentMon.Similarity}%</span>`;
+    document.getElementById("match-display").innerHTML = `MATCH: <span>${player.six_closest[0].similarity}%</span>`;
 
-    const pokemonStats = [currentMon.HP, currentMon.ATK, currentMon.DEF, currentMon.SPCA, currentMon.SPCD, currentMon.SPD];
-    const playerStats = [player.HP, player.ATK, player.DEF, player.SPCA, player.SPCD, player.SPD];
+    const pokemonStats = [currentMon.hp, currentMon.atk, currentMon.defs, currentMon.spcA, currentMon.spcD, currentMon.spd];
+    const playerStats = [player.hp, player.atk, player.defs, player.spcA, player.spcD, player.spd];
     const largestStat = Math.max( ...pokemonStats, ...playerStats); //equivalent of *pokemonStats in python
     const chartMax = Math.max(Math.ceil(largestStat / 20) * 20, 100);
 
@@ -74,7 +70,7 @@ async function setUpResultsData(id) {
 
             datasets: [
                 {
-                    label: pokemonNames[0],
+                    label: capitalize(currentMon.name),
 
                     data: pokemonStats,
 
@@ -89,7 +85,7 @@ async function setUpResultsData(id) {
                 },
 
                 {
-                    label: player.Name,
+                    label: player.name,
 
                     data: playerStats,
 
@@ -147,4 +143,8 @@ async function setUpResultsData(id) {
         }
 
     });
+}
+
+function capitalize(x){
+    return x.charAt(0).toUpperCase() + x.substring(1, x.length).toLowerCase() //suprising how many times I had to capitalize
 }
