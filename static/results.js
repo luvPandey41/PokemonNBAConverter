@@ -10,8 +10,6 @@ async function setUpResultsData(id) {
 
     console.log(player);
 
-    document.getElementById("player-name").innerHTML = `Results For: ${player.name}`;
-
     document.getElementById("player-image").src = `https://cdn.nba.com/headshots/nba/latest/260x190/${id}.png`
     document.getElementById("team-logo").src = `https://cdn.nba.com/logos/nba/${player.team}/global/L/logo.svg`
 
@@ -143,6 +141,17 @@ async function setUpResultsData(id) {
         }
 
     });
+
+
+    const x = player.six_closest[1].pokemon
+    document.getElementById("first-box-image").src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`;
+    document.getElementById("first-box-name").innerHTML = capitalize(x.name)
+
+    document.getElementById("first-box-type-1").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type1}.svg`
+    document.getElementById("first-box-type-2").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type2}.svg`
+    document.getElementById("first-box-type-names").innerHTML = capitalize(x.type1) + " " + capitalize(x.type2);
+
+    document.getElementById("first-box-match-display").innerHTML = `MATCH: <span>${player.six_closest[1].similarity}%</span>`
 }
 
 function capitalize(x){
