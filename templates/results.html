@@ -22,7 +22,9 @@
 
         <div class = "player-box">
 
-            <img id = "player-image">
+            <div class="image-border">
+                <img id="player-image">
+            </div>
 
             <div class = "player-info">
                 <img id = "team-logo">
@@ -73,7 +75,11 @@
 
         <div class = "pokemon-box">
 
-            <img id = "pokemon-img">
+            <h2 id = "main-num-display"> </h2>
+
+            <div class = "image-border">
+                <img id = "pokemon-img">
+            </div>
 
             <div class = "pokemon-info">
 
@@ -131,28 +137,7 @@
         <span class = "divider-line" style = "margin-right: 100px"></span>
     </div>
 
-    <div id = "mini-box-container">
-        <!-- <div class = "mini-box">
-
-            <h2 class = "num-display"> #2</h2>
-            <img id = "first-box-image">
-            <p id = "first-box-name"></p>
-            
-            <div class = "mini-box-details">
-                <img id = "first-box-type-1">
-                <img id = "first-box-type-2" style = "margin-left: 4px">
-                <p style = "margin-left: 4px" id = "first-box-type-names">  </p>
-            </div>
-
-            <p id = "first-box-match-display"> </p>
-
-        </div>
-
-        <div class = "mini-box">Hello</div>
-        <div class = "mini-box">Hello</div>
-        <div class = "mini-box">Hello</div>
-        <div class = "mini-box">Hello</div> -->
-    </div>
+    <div id = "mini-box-container"> </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ url_for('static', filename='results.js') }}"></script>

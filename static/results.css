@@ -77,8 +77,8 @@ body {
 }
 
 #player-image, #pokemon-img {
-    width: 260px;
-    height: 190px;
+    width: 300px;
+    height: 240px;
 
     object-fit: contain;
 
@@ -96,8 +96,8 @@ body {
 }
 
 #team-logo{
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
 }
 
 #pokemon-type-1, #pokemon-type-2{
@@ -113,7 +113,7 @@ body {
 }
 
 #player-position-and-team, #pokemon-genus{
-    font-size: 14px;
+    font-size: 20px;
     color: #527985;
 }
 
@@ -151,14 +151,14 @@ body {
 }
 
 .stat-label {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
 
     color: #527985;
 }
 
 .stat-value {
-    font-size: 17px;
+    font-size: 21px;
     font-weight: 700;
 
     color: #2F3E46;
@@ -210,6 +210,18 @@ body {
     align-self: flex-start;
 }
 
+#main-num-display{
+    position: absolute;
+    
+    font-size: 32px;
+    font-weight: 700;
+   
+    margin-top: -10px;
+    margin-left: -14px;
+
+    align-self: flex-start;
+}
+
 .mini-box-image{
     width: 160px;
     height: 160px;
@@ -249,4 +261,28 @@ body {
     display: flex; 
     align-items: center; 
     justify-content: center;
+}
+
+.image-border {
+    width: 280px;
+    height: 240px;
+
+    border: 3px solid #46A497;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+#player-image, #pokemon-img {
+    width: 264px;
+    height: 220px;
+
+    object-fit: contain;
+    display: block;
 }
