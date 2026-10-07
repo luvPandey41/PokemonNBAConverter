@@ -142,17 +142,84 @@ async function setUpResultsData(id) {
 
     });
 
+    document.getElementById("mini-box-container").append(createMiniBox(player, 1));
+    document.getElementById("mini-box-container").append(createMiniBox(player, 2));
+    document.getElementById("mini-box-container").append(createMiniBox(player, 3));
+    document.getElementById("mini-box-container").append(createMiniBox(player, 4));
+    document.getElementById("mini-box-container").append(createMiniBox(player, 5));
 
-    const x = player.six_closest[1].pokemon
-    document.getElementById("first-box-image").src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`;
-    document.getElementById("first-box-name").innerHTML = capitalize(x.name)
 
-    document.getElementById("first-box-type-1").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type1}.svg`
-    document.getElementById("first-box-type-2").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type2}.svg`
-    document.getElementById("first-box-type-names").innerHTML = capitalize(x.type1) + " " + capitalize(x.type2);
+    // const x = player.six_closest[1].pokemon
+    // document.getElementById("first-box-image").src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`;
+    // document.getElementById("first-box-name").innerHTML = capitalize(x.name);
 
-    document.getElementById("first-box-match-display").innerHTML = `MATCH: <span>${player.six_closest[1].similarity}%</span>`
+    // document.getElementById("first-box-type-1").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type1}.svg`
+    // document.getElementById("first-box-type-2").src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type2}.svg`
+    // document.getElementById("first-box-type-names").innerHTML = capitalize(x.type1) + " " + capitalize(x.type2);
+
+    // document.getElementById("first-box-match-display").innerHTML = `MATCH: <span>${player.six_closest[1].similarity}%</span>`
 }
+
+function createMiniBox(p, num){
+    const x = p.six_closest[num].pokemon
+
+    const mini_box = document.createElement("div");
+    mini_box.classList.add("mini-box");
+
+    const num_display = document.createElement("h2");
+    num_display.classList.add("num-display");
+    num_display.innerHTML = `#${num + 1}`
+
+    const img = document.createElement("img");
+    img.classList.add("mini-box-image")
+    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.id}.png`;
+
+    const name_display = document.createElement("p");
+    name_display.classList.add("first-box-name");
+    name_display.innerHTML = capitalize(x.name);
+
+    const details = document.createElement("div");
+    details.classList.add("mini-box-details")
+
+    const type_1 = document.createElement("img");
+    type_1.classList.add("mini-box-type-1")
+    type_1.src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type1}.svg`
+
+    const type_2 = document.createElement("img");
+
+    if (x.type2 != null) {
+        type_2.classList.add("mini-box-type-2");
+        type_2.src = `https://raw.githubusercontent.com/luizbinario/pokemon-type-icons/main/icons/${x.type2}.svg`;
+    }
+   
+    const type_names = document.createElement("p");
+    type_names.classList.add("mini-box-type-names")
+    if (x.type2 != null) {
+        type_names.innerHTML = capitalize(x.type1) + " " + capitalize(x.type2);
+    } else {
+        type_names.innerHTML = capitalize(x.type1);
+    }
+
+
+    details.append(type_1);
+    if (x.type2 != null) details.append(type_2);
+    details.append(type_names);
+
+    const match_display = document.createElement("p");
+    match_display.classList.add("mini-box-match-display");
+    match_display.innerHTML = `MATCH: <span>${p.six_closest[1].similarity}%</span>`;
+    
+
+    mini_box.append(num_display);
+    mini_box.append(img);
+    mini_box.append(name_display);
+
+    mini_box.append(details);
+    mini_box.append(match_display);
+
+    return mini_box;
+}
+
 
 function capitalize(x){
     return x.charAt(0).toUpperCase() + x.substring(1, x.length).toLowerCase() //suprising how many times I had to capitalize

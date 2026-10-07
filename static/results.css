@@ -210,30 +210,43 @@ body {
     align-self: flex-start;
 }
 
-#first-box-image{
+.mini-box-image{
     width: 160px;
     height: 160px;
 
     display: block;
 }
 
-#first-box-name{
+.mini-box-name{
     font-size: 24px;
     font-weight: 700;
 }
 
-#first-box-type-1, #first-box-type-2{
+.mini-box-type-1, .mini-box-type-2{
     width: 25px;
     height: 25px;
+    margin: 0 5px 0 0;
 }
 
-#first-box-match-display{
+.mini-box-match-display{
     font-size: 18px;
     font-weight: 700;
 }
 
-#first-box-match-display span{
+.mini-box-match-display span{
     color: #46A497;
 }
 
+#mini-box-container{
+    display: grid; 
+    grid-template-columns: auto auto auto auto auto; 
+    gap: 18px; 
+    margin: 40px 80px 80px 80px; 
+    padding-bottom: 40px
+}
 
+.mini-box-details{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
