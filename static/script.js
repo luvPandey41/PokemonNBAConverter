@@ -125,3 +125,81 @@ teams.forEach(function(team) {
 
     teamContainer.append(button);
 });
+
+let players = [];
+
+async function loadPlayers() {
+    const response = await fetch("/all_players");
+    const data = await response.json();
+
+    for (const [teamID, roster] of Object.entries(data)) {
+
+        for (const player of roster) {
+            player.teamID = teamID;
+            players.push(player);
+        }
+    
+    }
+}
+
+function updateSuggestions() {
+    const input = document.getElementById("search-box").value;
+
+    document.getElementById("autofill-container").innerHTML = "";
+
+    if(input == "") {
+        return; //I dont even wanna deal with this case, looks to weird ot have autofill there
+    }
+
+    matches = []   
+
+    for(const player of players){
+        if(player.Name.toLowerCase().substring(0, input.length) == input.toLowerCase()){ //later make this work with last names (proabbly straightforward ash)
+            matches.push(player)
+        }
+    }
+
+    console.log(matches);
+
+    displayedMatches = matches.slice(0, 5) //sometimes you get matches of length 50 and its unreasonable to display allat
+
+    for(const i of displayedMatches){
+        createAutofillBox(i);
+    }
+}
+
+function createAutofillBox(player){
+    const autofillContainer = document.getElementById("autofill-container"); 
+
+    const box = document.createElement("div");
+    box.classList.add("search-suggestion");
+    
+    const img = document.createElement("img");
+    img.classList.add("autofill-box-image")
+    img.src = `https://cdn.nba.com/headshots/nba/latest/260x190/${player.PlayerID}.png`;
+
+    const text = document.createElement("div");
+    text.innerHTML = `${player.Name} • ${player.Position}, ${getTeamNameFromID(player.teamID)}`;
+
+    box.append(img);
+    box.append(text);
+
+    box.onclick = function() {
+        window.location.href = `/results?player_id=${player.PlayerID}`;
+    };
+
+    autofillContainer.append(box);
+}
+
+function getTeamNameFromID(id){
+    for (i of  teams){
+        if(i.id == id) return i.name;
+    }
+    console.log(`Team of id ${id} does not exist.`);
+}
+
+loadPlayers();
+
+document.getElementById("search-box").addEventListener("input", updateSuggestions); //input is hte HTML DOM event that works best with this case
+
+
