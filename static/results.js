@@ -50,8 +50,9 @@ function createMiniBox(p, num){
 
     const mini_box = document.createElement("div");
     mini_box.classList.add("mini-box");
-
     mini_box.id = `mini-box-${num}`;
+
+    mini_box.dataset.number = num + 1;
 
     const num_display = document.createElement("h2");
     num_display.classList.add("num-display");
@@ -104,15 +105,17 @@ function createMiniBox(p, num){
     mini_box.append(details);
     mini_box.append(match_display);
 
-
-    mini_box.onclick = function () {swapMainDisplay(p, num + 1)}; //added 1 cuz the first box is really the second best result
+    mini_box.onclick = function () {swapMainDisplay(p, Number(mini_box.dataset.number), num);}; //added 1 cuz the first box is really the second best result
 
     return mini_box;
 }
 
 
 function createMainDisplay(player, num){
+
     const currentMon = player.six_closest[num-1].pokemon //allow this to be changed
+
+    document.getElementById("main-num-display").dataset.number = num;
 
     document.getElementById("pokemon-img").src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentMon.id}.png`;
 
@@ -265,14 +268,12 @@ function createMainDisplay(player, num){
 }
 
 
-function swapMainDisplay(p, num){
-    const prevMain = document.getElementById("main-num-display").innerHTML.charAt(1); //cleveerrrrrr thats verry clevvvvererere (ik)
+function swapMainDisplay(p, pokemonNumber, boxNumber){
+    const prevMain = Number(document.getElementById("main-num-display").dataset.number);
 
-    console.log(prevMain);
+    createMainDisplay(p, pokemonNumber);
 
-    createMainDisplay(p, num)
-
-    replaceMiniBox(prevMain, num - 1, p)
+    replaceMiniBox(prevMain, boxNumber, p);
 }
 
 function replaceMiniBox(newMonNumber, oldMonNumber, p){
@@ -323,7 +324,9 @@ function replaceMiniBox(newMonNumber, oldMonNumber, p){
 
     relevantBox.querySelector(".mini-box-match-display").innerHTML = `MATCH: <span>${p.six_closest[newMonNumber - 1].similarity}%</span>`;
 
-    relevantBox.onclick = function () {swapMainDisplay(p, newMonNumber);}; //very importnat or else it doesn't function later
+    relevantBox.dataset.number = newMonNumber;
+
+    relevantBox.onclick = function () {swapMainDisplay(p, Number(relevantBox.dataset.number), oldMonNumber);};
 }
 
 
