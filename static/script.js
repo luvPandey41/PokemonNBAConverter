@@ -1,5 +1,5 @@
 async function openBox(teamID) {
-
+    
     const team = teams.find(function(team) {
         return team.id === teamID;
     });
@@ -34,8 +34,10 @@ async function openBox(teamID) {
 
 function HandleBoxClick(event){
     if(!document.getElementById("box").contains(event.target)){
-        document.removeEventListener("click", HandleBoxClick);
-        closeBox();
+        if(!document.getElementById("box").classList.contains("active")){
+            document.removeEventListener("click", HandleBoxClick);
+            closeBox();
+        }   
     }
 }
 
