@@ -3,6 +3,8 @@ from nba_api.stats.static import players
 from nba_api.stats.endpoints import CommonTeamRoster
 from nba_api.stats.endpoints import commonplayerinfo
 from nba_api.stats.static import teams
+from nba_api.stats.endpoints import LeagueDashPtStats
+from nba_api.stats.endpoints import LeagueDashPtDefend
 import math
 import pokemon
 import json
@@ -43,10 +45,10 @@ class Player:
         tpct = season["FG3_PCT"]
         tpa = round(season["FG3A"] / gp, 2)
 
-        rimpct = 54
-        tdef = 36
+        rimpct, tdef = get_defensive_stats(player_id)
+        
         fgPct = season["FG_PCT"]
-        avgSpd = 4
+        avgSpd = get_avg_speed(player_id)
 
         team = int(season["TEAM_ID"])
 
@@ -56,14 +58,13 @@ class Player:
 
         return (name, ppg, rpg, apg, spg, bpg, gp, mpg, tpct, tpa, rimpct, tdef, fgPct, avgSpd, team, position)
 
-
     def convert_stats(self):
-        self.hp = math.floor(self.gp * self.mpg / 24)
-        self.atk = math.floor(self.ppg * self.fgPct * 8 )
-        self.defs = math.floor((self.rpg * 4) + (self.bpg * 12) + (100 - self.rimpct)) #rim percent is the amount a player gets scored on, expressed as a percentage
-        self.spcA = math.floor(((self.tpct * self.tpa) * 100) / 4 + self.apg * 4)
-        self.spcD = math.floor(self.spg * 12 + (100 - self.tdef)) # tdef is the amount a player gets scored on outside the arc
-        self.spd = math.floor(self.avgSpd * 25)
+        self.hp = math.floor(40 + (self.gp * self.mpg / 30))
+        self.atk = math.floor(40 + self.ppg * self.fgPct * 6 )
+        self.defs = math.floor(55 + self.rpg * 3 + self.bpg * 10+ (0.55 - self.rimpct) * 120) #rim percent is the amount a player gets scored on, expressed as a percentage
+        self.spcA = math.floor(35 + (self.tpct * self.tpa * 15)  + self.apg * 4)
+        self.spcD = math.floor(65 + self.spg * 6 + (0.36 - self.tdef) * 130) # tdef is the amount a player gets scored on outside the arc
+        self.spd = math.floor(40 + self.avgSpd * 8)
 
     def calculate_similarity(self, pokemon):
         distance = math.sqrt(
@@ -203,3 +204,26 @@ def get_player(id):
     "spd": int(p.spd), "six_closest": p.six_closest}   
     
     return results
+
+def get_avg_speed(player_id):
+    tracking = LeagueDashPtStats(season= "2025-26", pt_measure_type= "SpeedDistance", player_or_team="Player")
+
+    df = tracking.get_data_frames()[0]
+
+    player = df[df["PLAYER_ID"] == player_id] #the way you actually individualize the data to the player with id player_id
+
+    return player.iloc[0]["AVG_SPEED"]
+
+def get_defensive_stats(player_id):
+
+    response = LeagueDashPtDefend(season = "2025-26", defense_category = "2 Pointers")
+    df = response.get_data_frames()[0]
+    player = df[df["CLOSE_DEF_PERSON_ID"] ==  player_id]
+    FG2_PCT = player.iloc[0]["FG2_PCT"]
+
+    response = LeagueDashPtDefend(season = "2025-26", defense_category = "3 Pointers")
+    df = response.get_data_frames()[0]
+    player = df[df["CLOSE_DEF_PERSON_ID"] ==  player_id]
+    FG3_PCT = player.iloc[0]["FG3_PCT"]
+                                  
+    return FG2_PCT, FG3_PCT
